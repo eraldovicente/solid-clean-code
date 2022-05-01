@@ -37,6 +37,41 @@
 
     }
 
+    // Antes
+    /* 
+    const getPayAmount = ({ isDead = false, isSeparated = true, isRetired = false }) => {
+        let result;
+        if ( isDead ) {
+            result = 1500;
+        } else {
+            if ( isSeparated ) {
+                result = 2500;
+            } else {
+                if ( isRetired ) {
+                    result = 3000;
+                } else {
+                    result = 4000; 
+                }
+            }
+        }
+        
+        return result;
+    }
+    */
+
+    // Depois
+    const getPayAmount = ({ isDead = false, isSeparated = true, isRetired = false }): number => {
+        
+        let result: number;
+ 
+        if ( isDead ) result = 1500;
+         
+        if ( isSeparated ) result = 2500;
+
+        return ( isRetired ) ? 3000 : 4000; 
+
+    }
+
     
 
 
